@@ -1,0 +1,69 @@
+{
+    "Routes": [
+        {
+            "DownstreamPathTemplate": "/api/product/{everything}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 44301
+                }
+            ],
+            "UpstreamPathTemplate": "/product/{everything}",
+            "UpstreamHttpMethod": [
+                "Put",
+                "Delete",
+                "Get",
+                "Post"
+            ],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "testKey",
+                "AllowedScopes": []
+            }
+        },
+        {
+            "DownstreamPathTemplate": "/api/order/{everything}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 44303
+                }
+            ],
+            "UpstreamPathTemplate": "/order/{everything}",
+            "UpstreamHttpMethod": [
+                "Put",
+                "Delete",
+                "Get",
+                "Post"
+            ],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "testKey",
+                "AllowedScopes": []
+            }
+        },
+        {
+            "DownstreamPathTemplate": "/api/auth/{everything}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 44303
+                }
+            ],
+            "UpstreamPathTemplate": "/auth/{everything}",
+            "UpstreamHttpMethod": [
+                "Put",
+                "Delete",
+                "Get",
+                "Post"
+            ]
+        }
+    ],
+    "GlobalConfiguration": {
+        "ServiceDiscoveryProvider": {
+            "Host": "localhost",
+            "Port": 5001
+        }
+    }
+}
